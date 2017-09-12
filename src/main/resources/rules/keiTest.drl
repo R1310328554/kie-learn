@@ -1,0 +1,23 @@
+package os.nut.drools
+
+import xx.Message;
+
+
+rule "GoodBye2"
+
+no-loop true
+	when
+		Message( status == Message.GOODBYE, myMessage : message )
+	then
+		System.out.println("222222222 + " +  myMessage );
+end
+
+rule "Hello World2"
+	when
+		m : Message( status == Message.HELLO, myMessage : message )
+	then
+		System.out.println("1111111111" +  myMessage );
+		m.setMessage( "Goodbye cruel world" );
+		m.setStatus( Message.GOODBYE );
+		update( m );
+end

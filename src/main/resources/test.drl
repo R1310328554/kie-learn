@@ -1,0 +1,8 @@
+package test
+import java.util.List;
+rule "rule1"
+when
+$customer:Customer(name matches "李.*");
+then
+System.out.println($customer.getName());
+end

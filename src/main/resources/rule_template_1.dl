@@ -1,0 +1,16 @@
+template header  
+RULE_ID  
+RULE_KEY1  
+  
+package com.caicongyang.drools.templates;  
+  
+import com.caicongyang.drools.templates.Message;  
+  
+template "RULE"  
+rule "RULE_@{RULE_ID}"  
+    when  
+        m: Message(@{RULE_KEY1})  
+    then  
+        System.out.println(m.getMessage());  
+end  
+end template  
